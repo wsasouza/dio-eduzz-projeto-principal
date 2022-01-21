@@ -3,6 +3,7 @@ import {Campaign} from "../entity/Campaign";
 import {CampaignRepository} from "../repositories/CampaignRepository"
 import IPaginationFilter from "./interfaces/IPaginationFilter";
 import IListResult from "./interfaces/IListResult";
+import IDeleteCampaignResult from "./interfaces/IDeleteCampaignResult";
 
 class CampaignService {
 

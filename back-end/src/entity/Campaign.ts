@@ -31,11 +31,11 @@ export class Campaign extends BaseEntity {
     @Column({ name: "end_date" })
     endDate: Date;
 
-    @ManyToOne(type => Source)
+    @ManyToOne(() => Source)
     @JoinColumn({ name: "source_id" })
     source: Source;
 
-    @ManyToOne(type => User)
+    @ManyToOne(() => User)
     @JoinColumn({ name: "user_id" })
     user: User;
 }

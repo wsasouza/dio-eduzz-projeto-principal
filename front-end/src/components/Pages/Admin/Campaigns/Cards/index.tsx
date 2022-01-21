@@ -15,6 +15,7 @@ import campaignService from '@/services/campaign';
 const CampaignsCards: React.FC<IStyledProp> = ({ className }) => {
   const [roi, , roiLoading, roiRefresh] = usePromiseRefresh(async () => {
     const data = await campaignService.graphRoi();
+    if (isNaN(Number(data))) return '0%';
     return (Number(data) * 100).toFixed(2) + '%';
   }, []);
 

@@ -27,9 +27,10 @@ interface IProps extends IStyledProp {
 }
 
 const sources: ISelectFieldOption[] = [
-  { label: 'Whatsapp', value: 'whatsapp' },
   { label: 'Facebook', value: 'facebook' },
-  { label: 'Instagram', value: 'instagram' }
+  { label: 'Instagram', value: 'instagram' },
+  { label: 'Whatsapp', value: 'whatsapp' },
+  { label: 'Telegram', value: 'telegram' }
 ];
 
 const CampaignForm: React.FC<IProps> = ({ opened, data, onComplete, onCancel, className }) => {

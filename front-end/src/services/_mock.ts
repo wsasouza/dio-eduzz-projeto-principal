@@ -13,7 +13,8 @@ function getRandomInt(min: number, max: number) {
 const sources = {
   1: 'facebook',
   2: 'whatsapp',
-  3: 'instagram'
+  3: 'instagram',
+  4: 'telegram'
 };
 
 let campaigns = new Array(15).fill('a').map<ICampaign>((a, index) => ({
@@ -25,7 +26,7 @@ let campaigns = new Array(15).fill('a').map<ICampaign>((a, index) => ({
   beginDate: faker.date.past(),
   endDate: faker.date.future(),
   roi: Math.random(),
-  source: sources[getRandomInt(1, 4)]
+  source_id: sources[getRandomInt(1, 4)]
 }));
 
 let campaignId = campaigns.length;

@@ -6,6 +6,7 @@ import EditIcon from 'mdi-react/EditIcon';
 import FacebookOutline from '@eduzz/houston-icons/FacebookOutline';
 import InstagramOutline from '@eduzz/houston-icons/InstagramOutline';
 import PaperAirplaneOutline from '@eduzz/houston-icons/PaperAirplaneOutline';
+import TelegramOutline from '@eduzz/houston-icons/TelegramOutline';
 import WhatsAppOutline from '@eduzz/houston-icons/WhatsAppOutline';
 import Table from '@eduzz/houston-ui/Table';
 import Toast from '@eduzz/houston-ui/Toast';
@@ -18,9 +19,10 @@ import { ICampaign } from '@/interfaces/models/campaign';
 import campaignService from '@/services/campaign';
 
 const iconsMap = {
-  facebook: FacebookOutline,
-  instagram: InstagramOutline,
-  whatsapp: WhatsAppOutline
+  1: FacebookOutline,
+  2: InstagramOutline,
+  3: WhatsAppOutline,
+  4: TelegramOutline
 };
 
 interface IProps {
@@ -37,8 +39,8 @@ const ListItem = memo((props: IProps) => {
   const [loading, setLoading] = useState(false);
 
   const Icon = useMemo(() => {
-    return iconsMap[data.source] ?? PaperAirplaneOutline;
-  }, [data.source]);
+    return iconsMap[data.source_id] ?? PaperAirplaneOutline;
+  }, [data.source_id]);
 
   const handleEdit = useCallback(() => {
     onEdit(data);
