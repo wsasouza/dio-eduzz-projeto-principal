@@ -13,7 +13,7 @@ class LoginService {
         const user = await this.userRepository.getUserByCredentials(username, password);
         if (!user) throw new NotFoundException('User not found');
         const newToken = jwt.sign({ user_id: user.id }, '123', {
-            expiresIn: 3600
+            expiresIn: '1d'
         });
         return newToken;
     }

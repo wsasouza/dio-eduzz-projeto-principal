@@ -31,8 +31,11 @@ export class Campaign extends BaseEntity {
     @Column({ name: "end_date" })
     endDate: Date;
 
-    @ManyToOne(() => Source)
+    @ManyToOne(() => Source, {
+        eager: true
+    })
     @JoinColumn({ name: "source_id" })
+    
     source: Source;
 
     @ManyToOne(() => User)

@@ -9,12 +9,12 @@ export class CampaignRepository extends Repository<Campaign>{
     public listCampaigns = async (userId: number, filter: Partial<IPaginationFilter>): Promise<Campaign[]> => {
         const queryBuilder: SelectQueryBuilder<Campaign> = this.createQueryBuilder();
         const all: Campaign[] = await queryBuilder
-            .select()
+            .select()            
             .take(filter.perPage)
             .skip((filter.page-1)*filter.perPage)
             .orderBy(filter.sort.field, filter.sort.direction)
             .where({ user_id: userId })
-            .getMany();
+            .getMany();            
         return all;
     }
 
@@ -27,13 +27,9 @@ export class CampaignRepository extends Repository<Campaign>{
         
         if (!campaign) throw new NotFoundException('Campanha não encontrada');
 
-        campaign.beginDate = data.beginDate;
-        campaign.endDate = data.endDate;
         campaign.investment = data.investment;
-        campaign.revenues = data.revenues;
-        campaign.link = data.link;
-        campaign.name = data.name;
-        campaign.source_id = 1;
+        campaign.revenues = data.revenues;        
+        campaign.endDate = data.endDate;        
         
         return await this.save(campaign);
     }
@@ -43,11 +39,12 @@ export class CampaignRepository extends Repository<Campaign>{
 
         console.log(data);
 
+        campaign.name = data.name;
+        campaign.link = data.link;
+        campaign.investment = data.investment;
+        campaign.revenues = data.revenues;
         campaign.beginDate = data.beginDate;
         campaign.endDate = data.endDate;
-        campaign.investment = data.investment;
-        campaign.link = data.link;
-        campaign.name = data.name;
         campaign.source_id = data.source_id;
         campaign.user_id = data.user_id;
 

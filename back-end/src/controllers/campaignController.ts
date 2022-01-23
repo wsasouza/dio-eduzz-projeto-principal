@@ -52,8 +52,10 @@ class CampaignController {
         return res.json(campaign);
     }
 
-    public deleteCampaign = async (req: Request, res: Response) => {
-        const id = Number(req.params['id']);
+    public deleteCampaign = async (req: Request, res: Response) => {  
+        const idParam = req.params['id'].replace("?id=", "");      
+        const id = Number(idParam);
+        console.log(idParam);
         const campaign = await this.campaignService.deleteCampaign(id);
         return res.json(campaign);
     }

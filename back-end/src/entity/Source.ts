@@ -9,7 +9,7 @@ export class Source extends BaseEntity {
     @Column()
     name: string;
 
-    @OneToMany(() => Campaign, campaign => campaign.source_id)
+    @OneToMany(() => Campaign, campaign => campaign.source_id )
     campaigns: Campaign[];
 }
 

@@ -14,8 +14,8 @@ setHoustonHooksConfig({
 
 ReactDOM.render(<App />, document.getElementById('root') as HTMLElement);
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.ready.then(registration => {
-    registration.unregister();
-  });
-}
+// if ('serviceWorker' in navigator) {
+//   navigator.serviceWorker.ready.then(registration => {
+//     registration.unregister();
+//   });
+// }

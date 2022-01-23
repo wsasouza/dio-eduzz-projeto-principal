@@ -31,6 +31,7 @@ app.post('/auth/reset-password', validateRequest(postResetPasswordValidator), Au
 app.use(validateToken);
 
 app.get('/campaigns', CampaignController.getAllCampaigns);
+app.get('/campaigns/:id', CampaignController.getCampaign);
 app.post('/campaigns', validateRequest(postCampaignValidator), CampaignController.saveCampaign);
 app.delete('/campaign/:id', CampaignController.deleteCampaign);
 
@@ -49,5 +50,5 @@ app.use((error: any, req: Request, res: Response, _: NextFunction) => {
 });
 
 app.listen(8000, () => {
-    console.log('Servidor ouvindo na porta 8000...')
+    console.log('Server is running on port 8000...')
 });
