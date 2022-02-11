@@ -6,8 +6,8 @@ import EditIcon from 'mdi-react/EditIcon';
 import FacebookOutline from '@eduzz/houston-icons/FacebookOutline';
 import InstagramOutline from '@eduzz/houston-icons/InstagramOutline';
 import PaperAirplaneOutline from '@eduzz/houston-icons/PaperAirplaneOutline';
-import TelegramOutline from '@eduzz/houston-icons/TelegramOutline';
-import WhatsAppOutline from '@eduzz/houston-icons/WhatsAppOutline';
+import Telegram from '@eduzz/houston-icons/Telegram';
+import WhatsApp from '@eduzz/houston-icons/WhatsApp';
 import Table from '@eduzz/houston-ui/Table';
 import Toast from '@eduzz/houston-ui/Toast';
 import Typography from '@eduzz/houston-ui/Typography';
@@ -21,8 +21,8 @@ import campaignService from '@/services/campaign';
 const iconsMap = {
   1: FacebookOutline,
   2: InstagramOutline,
-  3: WhatsAppOutline,
-  4: TelegramOutline
+  3: WhatsApp,
+  4: Telegram
 };
 
 interface IProps {

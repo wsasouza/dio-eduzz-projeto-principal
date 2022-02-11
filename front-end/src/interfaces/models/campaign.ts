@@ -4,8 +4,8 @@ export interface ICampaign {
   name: string;
   link?: string;
   investment: number;
-  revenues: number;
+  revenues?: number;
   beginDate: Date;
-  endDate: Date;
+  endDate?: Date;
   roi: number;
 }

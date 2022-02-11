@@ -43,8 +43,8 @@ export class ApiService {
       const request = API_ENDPOINT
         ? axios.request({
             baseURL: API_ENDPOINT,
-            url,
             method,
+            url,
             headers: {
               Authorization: authToken ? `Bearer ${authToken}` : null,
               'Content-Type': data instanceof FormData ? 'multipart/form-data' : 'application/json'
