@@ -21,9 +21,9 @@ export class ApiService {
     return this.request<T>('PUT', url, body);
   }
 
-  public delete<T = any>(url: string, params: any): Promise<T> {
-    console.log(url, params);
-    return this.request<T>('DELETE', url, params);
+  public delete<T = any>(url: string): Promise<T> {
+    console.log(url);
+    return this.request<T>('DELETE', url);
   }
 
   public upload<T = any>(url: string, data: FormData, onProgress: (progress: number) => void): Promise<T> {
